@@ -3,7 +3,7 @@ let cityname= 'London';
 // let datetime = document.querySelector(".weather__datetime");
 
 
-const APIkey= '5171327bdd09563727455d439de111c8';
+const APIkey= ;
 const weather =  ` https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}&units=metric` ;
   
 const getWeather = async () => {
