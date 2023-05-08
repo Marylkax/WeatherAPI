@@ -6,7 +6,7 @@ const citysearch = document.getElementById('citysearch');
 const button = document.getElementById('button');
 button.addEventListener('click', () => getWeather(citysearch.value));
 
-const APIkey= '5171327bdd09563727455d439de111c8';
+const APIkey= '';
 
   
 const getWeather = async (cityname = "Barcelona") => {
