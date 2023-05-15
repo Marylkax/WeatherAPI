@@ -3,14 +3,28 @@ background: rgb(164, 26, 224);
 color: rgb(236, 201, 229);
 font-family: Arial, Helvetica, sans-serif;
 font-size: 22px;}
+
+.weatherbody_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    display: grid;
+  gap: 10px;
+
+}
 .weatherbody {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+   border: solid 1px white;
+   margin: 20px;
     
-    padding-top: 10px;
-    margin-top: 20px;
+}
+.forecast{
+    display: flex;
+    justify-content: right;
+    
+    
 }
 .search {
     display: flex;
@@ -36,13 +50,14 @@ height: 50px;
 }
 .search button img {
     background: rgb(236, 201, 229);
-    /* height: 50px; */
+
 }
 .temp {
     display: flex;
-    flex-direction:row ;
- gap: 10px;
-    margin: 10px;
+    flex-direction:column ;
+    align-items: center;
+ 
+
 }
 .weathericon img {
     width: 100px;
@@ -67,5 +82,5 @@ height: 50px;
 
 ul {
     list-style-type: none;
-    border: solid 1px white;  
+   
 }
