@@ -54,22 +54,31 @@ let temp_max = document.querySelector(".temp_max");
 temp_max.innerHTML = `Min ${data.list[0].main.temp_max.toFixed()} &#8451` ;
  let weathericon = document.querySelector(".weathericon");
  document.querySelector('.weathericon img').src = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+// Trying to make background change for day and night
+//  console.log(data.list[0].dt_txt);
+//  let currentTime = new Date().getHours();
+//  if (data.list[0].dt_txt <= currentTime) { document.body.style.backgroundColor  =  blue; } 
+//  else { document.body.style.backgroundColor = "#AA0000"; }
+
 
 const fiveDay = document.getElementById("forecast");
+
 
 const midday = "12:00:00";
 const weatherArray = data.list;
 const mapArray = weatherArray.map (weatherItem => {
-   
+
 if (weatherItem.dt_txt.includes(midday)) {
     console.log(weatherItem.dt_txt);
+    
     let itemDay= new Date(weatherItem.dt *1000).getDay();
     const weekArray =  ["Sunday" , "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    
-    return `<h3> ${weekArray[itemDay]} / ${new Date(weatherItem.dt *1000).getDate()} / ${new Date(weatherItem.dt *1000).getMonth()} /  ${new Date(weatherItem.dt *1000).getFullYear()} </h3>
+    // document.querySelector('.weathericon img').src = `https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png`
+    // how to add in
+    return `
+    <h3> ${weekArray[itemDay]}  ${new Date(weatherItem.dt *1000).getDate()} / ${new Date(weatherItem.dt *1000).getMonth()} /  ${new Date(weatherItem.dt *1000).getFullYear()} </h3>
     <ul> <li> Temp : ${weatherItem.main.temp}  &#8451 </li>
-    <li> ${weatherItem.weather[0].description }</li>
+    <li> ${weatherItem.weather[0].description}</li>
     <li> </li>
     </ul>
     `;
@@ -80,10 +89,6 @@ if (weatherItem.dt_txt.includes(midday)) {
 fiveDay.innerHTML = mapArray. join("");
 //compare unix time stamps. or need to convert both values to have the same layout ?
 
-// const weatherdataArray = data;
-// const mapdataArray = weatherdataArray.map (weatherItem => {
-//    console.log(weatherItem);
-// });
 
 }
 
